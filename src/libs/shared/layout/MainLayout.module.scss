@@ -1,0 +1,10 @@
+.container {
+  width: 1920px;
+  margin: 0 auto;
+  padding-block: 100px 180px;
+
+  .title {
+    @include glyph32Bold;
+    text-align: center;
+  }
+}

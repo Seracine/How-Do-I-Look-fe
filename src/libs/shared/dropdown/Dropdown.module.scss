@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+  width: fit-content;
+
+  .trigger {
+    @include flexbox(normal, row, space-between, center);
+    width: 144px;
+    padding: 12px 20px;
+    box-shadow: 0 0 0 1px inset $black;
+
+    .selectedOption {
+      @include glyph14Regular;
+    }
+
+    .iconWrapper {
+      @include flexbox(normal, row, center, center);
+      width: 24px;
+      height: 24px;
+
+      img {
+        transition: transform 0.5s;
+      }
+    }
+  }
+
+  .popup {
+    z-index: 100;
+    top: 58px;
+
+    .selectMenu {
+      width: 144px;
+      background-color: $white;
+
+      .item {
+        @include glyph14Regular;
+        width: 100%;
+        transition: background-color 0.5s;
+        text-align: left;
+
+        &:hover {
+          background-color: $gray-brt2;
+        }
+
+        &:first-child {
+          box-shadow: 0 0 0 1px inset $black;
+        }
+
+        &:not(:first-child) {
+          box-shadow:
+            1px 0 0 0 inset $black,
+            -1px 0 0 0 inset $black,
+            0 -1px 0 0 inset $black;
+        }
+
+        .text {
+          margin: 16px 20px;
+        }
+      }
+    }
+  }
+}

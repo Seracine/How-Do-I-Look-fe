@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+
+  .arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    padding: 13px 18px;
+    transform: translate(0, -50%);
+    background-color: $black;
+
+    &[disabled] {
+      opacity: 0.5;
+    }
+
+    &.prev {
+      left: 23px;
+    }
+
+    &.next {
+      right: 23px;
+    }
+  }
+
+  .image {
+    object-fit: cover;
+  }
+}

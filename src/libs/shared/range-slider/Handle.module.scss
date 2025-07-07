@@ -1,0 +1,13 @@
+.container {
+  position: relative;
+  width: fit-content;
+
+  .value {
+    @include glyph12Bold;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $white;
+  }
+}

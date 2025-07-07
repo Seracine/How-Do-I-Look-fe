@@ -1,0 +1,34 @@
+.container {
+  display: inline-block;
+  width: 100%;
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px 20px;
+  box-shadow: 0 0 0 1px inset $black;
+
+  &.disabled {
+    background-color: $gray-brt2;
+  }
+
+  .input {
+    @include glyph14Regular(16px);
+    flex: 1;
+    min-width: 0;
+
+    &::placeholder {
+      color: $gray-brt1;
+    }
+
+    &[disabled] {
+      color: transparent;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.dialog {
+  position: relative;
+  top: 50%;
+  width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  transform: translate(0, -50%);
+  background-color: $white;
+
+  &:not(.hasBackdrop)::backdrop {
+    background-color: transparent;
+  }
+
+  .container {
+    .closeButton {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  .description {
+    @include glyph18Bold;
+    margin: 0 auto;
+    padding: 88px 0 64px;
+    text-align: center;
+  }
+
+  .buttonWrapper {
+    width: fit-content;
+    margin-left: auto;
+  }
+}

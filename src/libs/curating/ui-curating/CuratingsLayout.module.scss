@@ -1,0 +1,19 @@
+.container {
+  width: 680px;
+  margin: 0 auto;
+
+  .title {
+    @include glyph32Bold;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  .buttonWrapper {
+    width: fit-content;
+    margin: 0 auto 100px;
+  }
+
+  .searchBarWrapper {
+    margin-bottom: 40px;
+  }
+}

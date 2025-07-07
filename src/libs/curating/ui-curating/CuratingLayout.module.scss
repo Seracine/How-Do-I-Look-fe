@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+
+  .header {
+    @include flexbox(normal, row, space-between, center);
+    margin-bottom: 34px;
+
+    .left {
+      @include glyph16Regular;
+      color: $black;
+
+      .curator {
+        margin-left: 10px;
+        color: $gray-brt1;
+      }
+    }
+  }
+
+  .pointsContainer {
+    @include flexbox(20px);
+    margin-bottom: 40px;
+
+    .pointCategoryContainer {
+      @include flexbox(normal, row, flex-start, center);
+      padding-left: 8px;
+
+      .name {
+        @include glyph16Bold;
+        min-width: 46px;
+        margin-inline: 20px 40px;
+      }
+
+      .score {
+        @include glyph16Regular;
+      }
+    }
+  }
+
+  .contentContainer {
+    .contentHeader {
+      @include flexbox(10px, row, flex-start, center);
+      margin-bottom: 11px;
+      padding-left: 6px;
+
+      .contentTitle {
+        @include glyph16Bold;
+      }
+    }
+
+    .content {
+      @include glyph16Regular(22px);
+      margin-left: 28px;
+      white-space: pre-line;
+    }
+  }
+
+  .commentWrapper {
+    margin-top: 24px;
+  }
+
+  .postCommentButtonWrapper {
+    width: fit-content;
+    margin-left: auto;
+
+    span {
+      @include glyph14Regular;
+      color: $gray-brt1;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+}

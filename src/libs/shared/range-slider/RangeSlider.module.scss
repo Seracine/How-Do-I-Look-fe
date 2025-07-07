@@ -1,0 +1,38 @@
+.container {
+  @include flexbox(normal, row, stretch, flex-end);
+  height: 30px;
+
+  &:has(.thumb:active) {
+    cursor: pointer;
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 5px;
+  padding-right: 20px;
+}
+
+.thumb {
+  top: -25px;
+  width: 0;
+  cursor: pointer;
+
+  .thumbInner {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+.track {
+  height: 5px;
+  box-shadow: 0 0 0 1px inset $black;
+
+  &.trackLower {
+    background-color: $black;
+  }
+
+  &.trackUpper {
+    background-color: $white;
+  }
+}

@@ -1,0 +1,4 @@
+export const PAGINATION_SIBLING_COUNT = 5
+export const GALLERY_STYLES_PAGE_SIZE = 12
+export const RANKING_STYLES_PAGE_SIZE = 10
+export const CURATINGS_PAGE_SIZE = 5

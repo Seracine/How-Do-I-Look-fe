@@ -1,0 +1,7 @@
+.container {
+  @include flexbox(16px, row, flex-start, center);
+
+  .inputWrapper {
+    width: 100%;
+  }
+}

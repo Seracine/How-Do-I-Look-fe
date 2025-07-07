@@ -1,0 +1,7 @@
+.container {
+  @include flexbox(40px, column, flex-start, stretch);
+
+  .submitButton {
+    margin: 24px auto 0;
+  }
+}

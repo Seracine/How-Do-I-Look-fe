@@ -1,0 +1,25 @@
+.container {
+  padding: 20px 28px;
+  background-color: $gray-brt2;
+
+  .nickname {
+    @include glyph16Regular;
+    margin-bottom: 10px;
+    color: $black;
+
+    .author {
+      margin-left: 10px;
+      color: $gray-brt1;
+    }
+  }
+
+  .content {
+    @include glyph16Regular(22px);
+    white-space: pre-line;
+  }
+
+  .buttonsWrapper {
+    width: fit-content;
+    margin-left: auto;
+  }
+}

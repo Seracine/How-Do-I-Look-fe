@@ -1,0 +1,17 @@
+.styleListWrapper {
+  display: grid;
+  grid-gap: 80px 120px;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  margin: 0 auto 120px;
+}
+
+.paginationWrapper {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.emptyStyleWrapper {
+  width: fit-content;
+  margin: 103px auto 373px;
+}

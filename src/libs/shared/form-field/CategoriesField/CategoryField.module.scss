@@ -1,0 +1,15 @@
+.container {
+  @include flexbox(normal, row, space-between, center);
+
+  .toggleContainer {
+    @include flexbox(22px, row, flex-start, center);
+
+    .label {
+      @include glyph14Regular;
+    }
+  }
+
+  .inputsContainer {
+    @include flexbox(20px, row);
+  }
+}

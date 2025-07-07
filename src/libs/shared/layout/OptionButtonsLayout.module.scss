@@ -1,0 +1,10 @@
+.container {
+  @include flexbox(10px, row);
+
+  .button {
+    @include glyph14Regular;
+    color: $gray-brt1;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

@@ -1,0 +1,8 @@
+.headerTop {
+  @include flexbox(normal, row, space-between, center);
+}
+
+.headerBottom {
+  @include flexbox(normal, row, space-between, center);
+  margin-block: 40px;
+}

@@ -1,0 +1,11 @@
+.content {
+  margin-bottom: 24px;
+}
+
+.password {
+  margin-bottom: 40px;
+}
+
+.buttonWrapper {
+  @include flexbox(12px, row, flex-end, flex-start);
+}

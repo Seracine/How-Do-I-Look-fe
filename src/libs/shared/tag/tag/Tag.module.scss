@@ -1,0 +1,16 @@
+.container {
+  display: block;
+  width: fit-content;
+  padding: 7px 10px;
+  background-color: $gray-brt2;
+
+  &.selected {
+    background-color: $black;
+    color: $white;
+    pointer-events: none;
+  }
+
+  .text {
+    @include glyph14Regular;
+  }
+}

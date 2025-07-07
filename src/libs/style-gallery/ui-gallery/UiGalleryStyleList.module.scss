@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-gap: 100px 40px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.emptyStyleWrapper {
+  width: fit-content;
+  margin: 103px auto 260px;
+}

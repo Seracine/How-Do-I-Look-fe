@@ -1,0 +1,71 @@
+.container {
+  width: 680px;
+  margin: 0 auto;
+
+  .header {
+    @include flexbox(20px, column, flex-start, center);
+    margin-bottom: 40px;
+
+    .title {
+      @include glyph32Bold;
+    }
+
+    .nickname {
+      @include glyph18Regular;
+    }
+
+    .tagsCountContainer {
+      position: relative;
+      width: 100%;
+
+      .tagsContainer {
+        @include flexbox(20px, row);
+        @include glyph16Regular;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        width: fit-content;
+        max-width: 70%;
+        min-height: 18px;
+        margin: 0 auto;
+        color: $gray-brt1;
+      }
+
+      .countContainer {
+        @include flexbox(10px, row, flex-start, center);
+        @include glyph12Regular;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .count {
+          @include flexbox(5px, row, flex-start, center);
+        }
+      }
+    }
+
+    .buttonsWrapper {
+      align-self: flex-end;
+    }
+  }
+
+  .body {
+    margin-top: 100px;
+    margin-left: 8px;
+    @include flexbox(32px);
+
+    .category {
+      @include flexbox(40px, row);
+
+      .categoryNameContainer {
+        @include flexbox(20px, row, flex-start, center);
+        @include glyph16Bold;
+        min-width: 110px;
+      }
+
+      .categoryInfo {
+        @include glyph16Regular(22px);
+        white-space: pre-line;
+      }
+    }
+  }
+}

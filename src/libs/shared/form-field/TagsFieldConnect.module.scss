@@ -1,0 +1,7 @@
+.container {
+  .tagContainer {
+    @include flexbox(10px, row);
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+}

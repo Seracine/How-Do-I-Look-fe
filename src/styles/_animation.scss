@@ -1,0 +1,16 @@
+@keyframes fadeIO {
+  20% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  80% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

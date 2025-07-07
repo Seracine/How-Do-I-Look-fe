@@ -1,0 +1,19 @@
+.container {
+  @include flexbox(normal, row, flex-end, center);
+  position: relative;
+  width: 1920px;
+  height: 70px;
+  margin: 0 auto;
+  padding-inline: 220px;
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .buttonContainer {
+    @include flexbox(60px, row);
+    @include glyph14Regular;
+  }
+}

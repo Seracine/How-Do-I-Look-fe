@@ -1,0 +1,26 @@
+.container {
+  @include flexbox(10px, row);
+  width: fit-content;
+
+  .button {
+    @include flexbox(normal, row, center, center);
+    @include glyph14Bold;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 0 0 1px inset $black;
+
+    &.disabled,
+    &.selected {
+      pointer-events: none;
+    }
+
+    &.selected {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .arrow {
+    background-color: $gray-brt2;
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+  @include flexbox(10px, row);
+  width: fit-content;
+  padding: 7px 8px 7px 10px;
+  background-color: $gray-brt2;
+
+  .text {
+    @include glyph14Regular;
+    height: 16px;
+  }
+
+  .iconWrapper {
+    height: 16px;
+  }
+}

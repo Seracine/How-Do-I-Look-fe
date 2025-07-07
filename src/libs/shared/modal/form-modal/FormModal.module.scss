@@ -1,0 +1,23 @@
+.dialog {
+  // 참고: dialog 태그의 기본 position 속성 값은 fixed
+  top: 50%;
+  width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  transform: translate(0, -50%);
+  background-color: $white;
+
+  .container {
+    .closeButton {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  .title {
+    @include glyph24Bold;
+    margin: 20px auto 40px;
+    text-align: center;
+  }
+}

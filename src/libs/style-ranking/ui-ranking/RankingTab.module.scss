@@ -1,0 +1,17 @@
+.container {
+  @include glyph14Regular;
+  width: fit-content;
+
+  .menu {
+    display: inline-block;
+    min-width: 100px;
+    padding-block: 10px;
+    text-align: center;
+
+    &.selected {
+      @include glyph14Bold;
+      border-bottom: 2px solid $black;
+      pointer-events: none;
+    }
+  }
+}
