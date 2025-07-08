@@ -34,7 +34,6 @@ const enhancedFetch = async (
 
       // 1. 응답 본문이 HTML로 시작하는지 확인
       if (responseText.trim().startsWith('<!DOCTYPE html>')) {
-        // 큰따옴표를 작은따옴표로 변경
         console.error(`[enhancedFetch ERROR] Received HTML instead of JSON. Raw text:`, responseText.substring(0, 500))
         throw new Error(`HTTP Error: ${response.status} - ${response.statusText || '예상치 못한 HTML 응답'}`, { cause: new Error(responseText) })
       }
@@ -42,10 +41,8 @@ const enhancedFetch = async (
       // 2. 백엔드가 JSON 에러를 보낸다고 가정하고, JSON 파싱을 시도
       try {
         errorData = JSON.parse(responseText) // 이미 읽어둔 responseText를 파싱
-        // 큰따옴표를 작은따옴표로 변경
         console.error(`[enhancedFetch ERROR] Parsed Error JSON:`, errorData)
       } catch (jsonParseError) {
-        // 큰따옴표를 작은따옴표로 변경
         console.error(`[enhancedFetch ERROR] Failed to parse response as JSON. Raw text:`, responseText.substring(0, 500))
         throw new Error(`HTTP Error: ${response.status} - ${response.statusText || '유효하지 않은 응답 형식'}`, { cause: new Error(responseText) })
       }
@@ -67,24 +64,19 @@ const enhancedFetch = async (
 
       return jsonResponse // JSON 객체 자체를 반환
     } catch (jsonParseError) {
-      // 큰따옴표를 작은따옴표로 변경
       console.error(`[enhancedFetch ERROR] Received 200 OK but failed to parse JSON. Raw text:`, responseText.substring(0, 500))
       throw new Error(`Invalid JSON response from ${url}`, { cause: new Error(responseText) })
     }
   } catch (error: unknown) {
-    // 큰따옴표를 작은따옴표로 변경
     console.error(`[enhancedFetch CATCH] Fetch operation failed for URL: ${url}. Original error:`, error)
 
-    // 큰따옴표를 작은따옴표로 변경
     if (error instanceof TypeError && error.message === 'fetch failed' && (error.cause as ErrnoException)?.code === 'ECONNRESET') {
       console.error(`[enhancedFetch CATCH] Specific Network Error: ECONNRESET for ${url}. Connection reset by peer.`)
       throw new Error('네트워크 연결이 갑자기 끊겼습니다. 백엔드 서버 상태를 확인해 주세요.', { cause: error })
     } else if (error instanceof Error && error.message.includes('Body is unusable: Body has already been read')) {
-      // 큰따옴표를 작은따옴표로 변경
       console.error(`[enhancedFetch CATCH] Logic Error: Body already read for ${url}. This means the response stream was consumed multiple times. Check previous logs.`)
       throw new Error('응답 데이터를 읽는 중 내부 오류가 발생했습니다. (이미 읽은 본문)', { cause: error })
     } else if (error instanceof SyntaxError && error.message.includes('Unexpected token') && error.message.includes('is not valid JSON')) {
-      // 큰따옴표를 작은따옴표로 변경
       console.error(`[enhancedFetch CATCH] Parsing Error: Received non-JSON response (likely HTML) that caused JSON.parse to fail from ${url}.`)
       throw new Error('서버로부터 JSON이 아닌 예상치 못한 응답을 받았습니다. 백엔드 로그 확인이 필요합니다.', { cause: error })
     }
@@ -94,4 +86,3 @@ const enhancedFetch = async (
 }
 
 export default enhancedFetch
-// 파일의 마지막에 빈 줄을 추가했습니다.
