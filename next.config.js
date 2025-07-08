@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const { hostname } = require('os')
 const path = require('path')
 
 module.exports = {
@@ -22,6 +23,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'how-do-i-look-be-nfht.onrender.com'
+      }
     ],
   },
 }
