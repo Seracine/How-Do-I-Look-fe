@@ -1,38 +1,37 @@
 // src/libs/style-detail/feature-style-detail/StyleDetail.tsx
 
 // 필요한 모듈 임포트
-import getStyleDetail from '../data-access-style-detail/getStyleDetail';
-import StyleDetailLayout from '../ui-style-detail/StyleDetailLayout';
-import StyleImageCarousel from '../ui-style-detail/StyleImageCarousel';
-import StyleOptionButtons from './StyleOptionButtons';
-import { notFound } from 'next/navigation'; // Next.js의 notFound 함수 임포트
+import getStyleDetail from '../data-access-style-detail/getStyleDetail' // 세미콜론 제거
+import StyleDetailLayout from '../ui-style-detail/StyleDetailLayout' // 세미콜론 제거
+import StyleImageCarousel from '../ui-style-detail/StyleImageCarousel' // 세미콜론 제거
+import StyleOptionButtons from './StyleOptionButtons' // 세미콜론 제거
+import { notFound } from 'next/navigation' // 세미콜론 제거
 
 type StyleDetailProps = {
-  styleId: number;
-};
+  styleId: number
+}
 
 const StyleDetail = async ({ styleId }: StyleDetailProps) => {
-  let styleDetail; // styleDetail 변수를 try 블록 밖에서 선언합니다.
+  let styleDetail // 세미콜론 제거
 
   try {
     // getStyleDetail 함수가 API 호출 중 에러가 발생하면 여기서 catch 블록으로 이동합니다.
-    styleDetail = await getStyleDetail(styleId);
+    styleDetail = await getStyleDetail(styleId) // 세미콜론 제거
   } catch (error) {
-    console.error(`[StyleDetail] 스타일 상세 정보 가져오기 실패 (ID: ${styleId}):`, error);
+    console.error(`[StyleDetail] 스타일 상세 정보 가져오기 실패 (ID: ${styleId}):`, error) // 세미콜론 제거 및 따옴표 변경
 
     // 에러가 Error 클래스의 인스턴스이고, 메시지에 '404'가 포함되어 있다면 (우리의 'API Error: 404' 에러)
     if (error instanceof Error && error.message.includes('404')) {
       // Next.js의 notFound() 함수를 호출하여 404 페이지를 렌더링하도록 합니다.
-      // 이 함수가 호출되면, 이 컴포넌트의 이후 렌더링은 중단되고 Next.js의 404 처리가 시작됩니다.
-      notFound();
+      notFound() // 세미콜론 제거
     }
 
     // 404 에러가 아니라면, 다른 예상치 못한 에러이므로 다시 던져서 Next.js의 전역 에러 처리(error.tsx)가 동작하도록 합니다.
-    throw error;
+    throw error // 세미콜론 제거
   }
 
   // styleDetail이 성공적으로 로드된 경우에만 아래 코드가 실행됩니다.
-  const { imageUrls, ...styleDetailContent } = styleDetail;
+  const { imageUrls, ...styleDetailContent } = styleDetail // 세미콜론 제거
 
   return (
     <StyleDetailLayout
@@ -40,7 +39,8 @@ const StyleDetail = async ({ styleId }: StyleDetailProps) => {
       styleImageCarousel={<StyleImageCarousel imageUrls={imageUrls} />}
       optionButtons={<StyleOptionButtons styleId={styleId} />}
     />
-  );
-};
+  )
+}
 
-export default StyleDetail;
+export default StyleDetail // 세미콜론 제거
+// 파일 끝에 빈 줄이 있어야 합니다.
