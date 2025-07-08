@@ -44,4 +44,4 @@ const StyleDetail = async ({ styleId }: StyleDetailProps) => {
 }
 
 export default StyleDetail
-// 파일의 마지막에 빈 줄을 추가했습니다. (eol-last 오류 수정)
+// 파일의 마지막에 빈 줄을 추가했습니다.
