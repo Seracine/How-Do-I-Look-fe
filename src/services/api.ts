@@ -131,7 +131,7 @@ export const deleteCurating = async (
 export const uploadImage = async (file: File) => {
   const formData = new FormData()
   formData.append('image', file)
-  const response = await fetch(`${BASE_URL}/upload`, {
+  const response = await fetch(`${BASE_URL}/images`, {
     method: 'POST',
     body: formData,
   })
