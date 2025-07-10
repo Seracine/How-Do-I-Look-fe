@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const { hostname } = require('os')
 const path = require('path')
-const dotenv = require('dotenv')
-
-dotenv.config();
+require("dotenv").config();
 
 module.exports = {
   reactStrictMode: true,
