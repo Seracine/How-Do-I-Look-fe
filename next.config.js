@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const { hostname } = require('os')
 const path = require('path')
+const dotenv = require('dotenv')
+
+dotenv.config();
 
 module.exports = {
   reactStrictMode: true,
@@ -25,7 +28,7 @@ module.exports = {
       },
       {
         protocol: 'https',
-        hostname: 'how-do-i-look-be-nfht.onrender.com'
+        hostname: process.env.BACKEND_HOSTNAME || 'localhost'
       }
     ],
   },
